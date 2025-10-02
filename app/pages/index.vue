@@ -1,7 +1,7 @@
 <template>
     <div>
-        <span>aaaa</span>
-        <Grid @selectedRows="selected = $event" :columnDefs="columnDefs" animateRows="true" rowSelection="multiple" :rowData="rowData" title="Teste de Lib de Grid">
+        <span>HomePage</span>
+        <Grid @selectedRows="selected = $event" :columnDefs="columnDefs" animateRows="true" :rowData="rowData" title="Teste de Lib de Grid">
             <template #buttons>
                 <button @click="alert('Another Button in header slot clicked!')">Another Button</button>
             </template>
