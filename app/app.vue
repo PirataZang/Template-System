@@ -79,6 +79,7 @@
 
     .container {
         flex: 1;
+        min-height: 98vh;
     }
 }
 </style>

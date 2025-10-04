@@ -3,7 +3,7 @@
         <Grid @selectedRows="selected = $event" :columnDefs="columnDefs" animateRows="true" :rowData="rowData" title="Teste de Lib de Grid">
             <template #buttons>
                 <Button label="Alerta de pokemon" @click="alert" />
-
+                <LinkPage label="Link de Pokemon" to="buildingForm/${123}"></LinkPage>
                 <Button label="Botão Customizado" @click="open = true" />
                 <Button label="Botão Customizado 2" color="purple" @click="open = true" />
 
