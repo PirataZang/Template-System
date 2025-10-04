@@ -1,11 +1,8 @@
 <template>
     <div>
-        <Grid @selectedRows="selected = $event" :columnDefs="columnDefs" animateRows="true" :rowData="rowData" title="Teste de Lib de Grid">
+        <Grid @selectedRows="selected = $event" :columnDefs="columnDefs" animateRows="true" :rowData="rowData" title="Menu 01">
             <template #buttons>
-                <Button label="Alerta de pokemon" @click="alert" />
-
-                <Button label="Botão Customizado" @click="open = true" />
-                <Button label="Botão Customizado 2" color="purple" @click="open = true" />
+                <Button label="Alerta de pokemon Menu 01" @click="alert" />
 
                 <Modal :show="open" title="Exemplo de Modal" @close="open = false">
                     <p>Conteúdo do modal aqui...</p>
