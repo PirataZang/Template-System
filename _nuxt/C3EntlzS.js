@@ -1,0 +1,1 @@
+import{Q as o,c as t,a,t as r,R as s,o as n}from"#entry";const _={__name:"[id]",setup(c){const e=o().params.id;return(l,i)=>(n(),t("div",null,[a("h1",null,"Formulário do ID: "+r(s(e)),1)]))}};export{_ as default};
