@@ -10,3 +10,8 @@ export async function getPokemons(limit = 20, offset = 0) {
     const { data } = await api.get(`/pokemon?limit=${limit}&offset=${offset}`)
     return data.results
 }
+
+export async function getPokemonById(id) {
+    const { data } = await api.get(`/pokemon/${id}`)
+    return data
+}

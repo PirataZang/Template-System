@@ -19,6 +19,7 @@
 <script>
 import { AgGridVue } from 'ag-grid-vue3'
 import { AllCommunityModule, ModuleRegistry } from 'ag-grid-community'
+import collect from 'collect.js'
 ModuleRegistry.registerModules([AllCommunityModule])
 
 export default {
@@ -78,7 +79,7 @@ export default {
 
         onRowSelected(event) {
             const selectedRows = event.api.getSelectedRows()
-            this.$emit('selectedRows', selectedRows)
+            this.$emit('selectedRows', collect(selectedRows))
         },
 
         getRowId(params) {
