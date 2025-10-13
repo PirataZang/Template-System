@@ -1,9 +1,20 @@
-// /composables/useFormId.js
+// /composables/useForm.js
 import { useRoute } from '#imports'
 import collect from 'collect.js'
+import { computed, ref } from 'vue'
 
-export function useFormId() {
+export function useForm() {
+
     const route = useRoute()
-    const id = collect(route.params).first()
-    return id 
+
+    // Computed property for the ID
+    const id = computed(() => collect(route.params).first())
+    
+    // Form data state
+    const form = ref({})
+
+    return {
+        id,
+        form,
+    }
 }

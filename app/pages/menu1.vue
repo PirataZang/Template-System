@@ -2,7 +2,7 @@
     <div>
         <Grid @selectedRows="selected = $event" :columnDefs="columnDefs" animateRows="true" :rowData="rowData" title="Menu 01">
             <template #buttons>
-                <LinkPage label="Dados do Pokémon" :disabled="selected?.count() != 1" to="pokemon/1" ></LinkPage>
+                <LinkPage label="Dados do Pokémon" :disabled="selected?.count() != 1" :to="`pokemon/${selected?.first()?.id}`" ></LinkPage>
                 <Button label="Alerta de pokemon" @click="alert" />
 
                 <Modal :show="open" title="Exemplo de Modal" @close="open = false">
