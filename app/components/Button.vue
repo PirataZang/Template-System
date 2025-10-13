@@ -70,6 +70,20 @@ export default {
     }
 }
 
+.green {
+    color: rgb(255, 255, 255);
+    background-color: rgb(18, 175, 13);
+
+    &:hover {
+        background-color: rgb(16, 117, 13);
+    }
+
+    &:active {
+        transform: scale(0.95);
+        background-color: rgb(12, 88, 10);
+    }
+}
+
 .purple {
     color: white;
     background-color: rgb(119, 0, 255);

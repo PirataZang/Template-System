@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Grid @selectedRows="selected = $event" :columnDefs="columnDefs" animateRows="true" :rowData="rowData" title="Menu 01">
+        <Grid @selectedRows="selected = $event" :columnDefs="columnDefs" animateRows="true" :rowData="rowData" title="Lista de Pokemons">
             <template #buttons>
                 <LinkPage label="Dados do Pokémon" :disabled="selected?.count() != 1" :to="`pokemon/${selected?.first()?.id}`" ></LinkPage>
                 <Button label="Alerta de pokemon" @click="alert" />

@@ -3,7 +3,8 @@ export default defineNuxtConfig({
     app: {
         baseURL: '/Template-System/', // 👈 troca pro nome do teu repo no GitHub
     },
+    
     compatibilityDate: '2025-07-15',
-    css: ['@fortawesome/fontawesome-free/css/all.min.css'],
+    css: ['@fortawesome/fontawesome-free/css/all.min.css', '~/assets/css/main.scss'],
     devtools: { enabled: false },
 })

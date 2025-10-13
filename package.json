@@ -25,6 +25,9 @@
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
-    "gh-pages": "^6.3.0"
+    "@nuxt/types": "^2.18.1",
+    "@nuxt/typescript-build": "^3.0.2",
+    "gh-pages": "^6.3.0",
+    "typescript": "^5.9.3"
   }
 }

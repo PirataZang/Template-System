@@ -2,38 +2,36 @@
     <div class="formContainer">
         <div class="header">
             <h1 class="title" v-html="title"></h1>
-            <span class="id" @click="clipboard(id)">{{ id }}</span>
+            <span class="id" @click="handleClipboard(id)">{{ id }}</span>
         </div>
 
         <div class="content">
             <slot></slot>
         </div>
 
-        <slot name="buttons">
-        </slot>
+        <div class="footer">
+            <slot name="footer"> </slot>
+        </div>
     </div>
 </template>
 
-<script>
-export default {
-    name: 'Form',
-    props: {
-        title: {
-            type: String,
-            default: '',
-        },
-
-        id: {
-            type: [String, Number],
-            default: null,
-        },
+<script setup lang="ts">
+const props = defineProps({
+    title: {
+        type: String,
+        default: '',
     },
-
-    methods: {
-        clipboard(text) {
-            navigator.clipboard.writeText(text)
-        },
+    id: {
+        type: [String, Number] as PropType<string | number | null>,
+        default: null,
     },
+})
+
+// Método clipboard
+const handleClipboard = (text: string | number | null) => {
+    if (text !== null) {
+        navigator.clipboard.writeText(text.toString())
+    }
 }
 </script>
 
@@ -70,10 +68,15 @@ export default {
         }
     }
 
-
     .content {
         display: flex;
         flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .footer {
+        margin-top: 16px;
+        display: inline-flex;
         gap: 5px;
     }
 }
