@@ -11,7 +11,7 @@
                 <input type="text" placeholder="Buscar..." v-model="searchText" @input="onQuickFilterChanged" class="" />
             </div>
 
-            <ag-grid-vue ref="agGrid" :localeText="localeText"  @row-selected="onRowSelected" class="ag-theme-alpine" style="margin: 10px; width: calc(100% - 20px); height: 700px" :pagination="true" :rowSelection="rowSelection" :columnDefs="columnDefs" :rowData="rowData" @grid-ready="onGridReady" />
+            <ag-grid-vue ref="agGrid" :localeText="localeText" @row-selected="onRowSelected" class="ag-theme-alpine" style="margin: 10px; width: calc(100% - 20px); height: 700px" :pagination="true" :rowSelection="rowSelection" :columnDefs="columnDefs" :rowData="rowData" @grid-ready="onGridReady" />
         </div>
     </client-only>
 </template>
@@ -43,31 +43,35 @@ export default {
                 enableClickSelection: true,
             },
             localeText: {
+                // Paginação
+                page: 'Página',
+                of: 'de',
+                to: 'até',
+                more: 'mais',
+                next: 'Próxima',
+                last: 'Última',
+                first: 'Primeira',
+                previous: 'Anterior',
+
                 // Filtros
-                equals: 'Igual a',
-                notEqual: 'Diferente de',
-                lessThan: 'Menor que',
-                lessThanOrEqual: 'Menor ou igual a',
-                greaterThan: 'Maior que',
-                greaterThanOrEqual: 'Maior ou igual a',
-                inRange: 'Entre',
-                blank: 'Vazio',
-                notBlank: 'Não vazio',
-
-                // Text filter
                 filterOoo: 'Filtrar...',
-
-                // Menu
+                equals: 'Igual',
+                notEqual: 'Diferente',
+                lessThan: 'Menor que',
+                greaterThan: 'Maior que',
+                lessThanOrEqual: 'Menor ou igual',
+                greaterThanOrEqual: 'Maior ou igual',
+                inRange: 'Entre',
                 contains: 'Contém',
                 notContains: 'Não contém',
                 startsWith: 'Começa com',
                 endsWith: 'Termina com',
+                blank: 'Em branco',
+                notBlank: 'Não em branco',
 
-                // Botões
-                applyFilter: 'Aplicar',
-                resetFilter: 'Redefinir',
-                clearFilter: 'Limpar',
-                cancel: 'Cancelar',
+                // Geral
+                noRowsToShow: 'Nenhum registro encontrado',
+                loadingOoo: 'Carregando...',
             },
         }
     },
