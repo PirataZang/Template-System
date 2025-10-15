@@ -10,6 +10,11 @@
             <span class="text">Pokemon</span>
         </NuxtLink>
 
+        <NuxtLink class="itemMenu" to="/products/productsList">
+            <i class="fa-solid fa-list"></i>
+            <span class="text">Produtos</span>
+        </NuxtLink>
+
         <TreeMenu :hideText="hideText" icon="fa-solid fa-list" title="Pokemon">
             <template #items>
                 <NuxtLink class="itemMenu" to="/menu1">

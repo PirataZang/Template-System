@@ -1,6 +1,6 @@
 <template>
     <div class="app">
-        <div class="sidebar">
+        <div v-if="isLogin" class="sidebar">
             <Menu />
         </div>
 
@@ -9,6 +9,12 @@
         </div>
     </div>
 </template>
+
+<script setup>
+const isLogin = computed(() => {
+    return Boolean(localStorage.getItem('pb_auth'))
+})
+</script>
 
 <style lang="scss">
 .app {
