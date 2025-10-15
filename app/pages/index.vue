@@ -1,21 +1,11 @@
 <template>
-    <div>
-        <Grid @selectedRows="selected = $event" :columnDefs="columnDefs" animateRows="true" :rowData="rowData" title="Teste de Lib de Grid">
-            <template #buttons>
-                <Button label="Alerta de pokemon" @click="alert" />
-                <Button label="Botão Customizado" @click="open = true" />
-                <Button label="Botão Customizado 2" color="purple" @click="open = true" />
-
-                <Modal :show="open" title="Exemplo de Modal" @close="open = false">
-                    <p>Conteúdo do modal aqui...</p>
-                    <button>Outro Botão</button>
-                    <input type="text" placeholder="Input dentro do modal" />
-                    <template #footer>
-                        <button @click="open = false">Fechar</button>
-                    </template>
-                </Modal>
-            </template>
-        </Grid>
+    <div class="principalPanel">
+        <div class="panel-lg">
+            <div class="desc">
+                <h1 class="descTitle">Template de Sistema Pré-Pronto</h1>
+                <span class="description">Nosso sistema CRM pré-pronto foi desenvolvido para ajudar empresas a organizar e gerenciar seus clientes de forma prática e eficiente. Ele já vem com funcionalidades prontas, como cadastro de contatos, acompanhamento de vendas, histórico de interações e relatórios automáticos — tudo em uma interface simples e intuitiva. Ideal pra quem quer começar rápido sem precisar desenvolver tudo do zero. 🚀</span>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -55,3 +45,34 @@ export default {
     },
 }
 </script>
+
+<style lang="scss" scoped>
+.principalPanel {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .panel-lg {
+        background-color: rgb(172, 172, 172);
+        padding: 10px;
+        border-radius: 10px;
+
+        .desc {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+
+            .descTitle {
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+
+            .description {
+                text-align: justify;
+                padding: 25px;
+            }
+        }
+    }
+}
+</style>

@@ -1,20 +1,38 @@
 <template>
-    <div class="menu">
+    <div class="menu" @click="toggleMenu">
         <NuxtLink class="itemMenu" to="/">
-            <div class="itemText">
-                <i class="fa-solid fa-house"></i>
-                <span class="text">Home</span>
-            </div>
+            <i class="fa-solid fa-house"></i>
+            <span class="text">Home</span>
         </NuxtLink>
 
         <NuxtLink class="itemMenu" to="/menu1">
-            <div class="itemText">
-                <i class="fa-solid fa-list"></i>
-                <span class="text">Menu 01</span>
-            </div>
+            <i class="fa-solid fa-list"></i>
+            <span class="text">Pokemon</span>
         </NuxtLink>
+
+        <TreeMenu :hideText="hideText" icon="fa-solid fa-list" title="Pokemon">
+            <template #items>
+                <NuxtLink class="itemMenu" to="/menu1">
+                    <i class="fa-solid fa-list"></i>
+                    <span class="text">Pokemon</span>
+                </NuxtLink>
+
+                <NuxtLink class="itemMenu" to="/menu1">
+                    <i class="fa-solid fa-list"></i>
+                    <span class="text">Pokemon</span>
+                </NuxtLink>
+            </template>
+        </TreeMenu>
     </div>
 </template>
+
+<script setup lang="ts">
+let hideText = true
+
+const toggleMenu = () => {
+    hideText = !hideText
+}
+</script>
 
 <style lang="scss">
 .menu {
@@ -25,6 +43,7 @@
     border-radius: 5px;
     margin-right: 20px;
     display: flex;
+    overflow-y: auto;
     position: fixed;
     z-index: 999999;
     flex-direction: column;
@@ -33,40 +52,31 @@
     transition: all 0.3s ease;
 
     .itemMenu {
+        padding: 12px 16px;
         display: flex;
-        align-items: center;
-        justify-content: flex-start;
         text-decoration: none;
-        height: 45px;
-        padding-left: calc(100% / 3.3);
-        border-radius: 5px;
-        transition: all 0.3s ease;
-        background-color: #d4d4d4;
+        color: #666;
+        border-radius: 7px;
+        align-items: center;
+        cursor: pointer;
+        background: #ffffff;
+        gap: 20px;
+        overflow: hidden;
+        height: 23px;
 
         &:hover {
             background: #bbbbbb;
             cursor: pointer;
-        }
-
-        .itemText {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-
-            .text {
-                opacity: 0;
-                transition: all 0.3s;
-            }
         }
     }
 
     &:hover {
         width: 200px;
         background: #e0e0e0;
-        cursor: pointer;
 
-        .itemText .text {
-            opacity: 100%;
+        .itemMenu {
+            min-height: 23px;
+            height: auto;
         }
     }
 }

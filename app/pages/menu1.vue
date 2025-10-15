@@ -23,8 +23,6 @@ import collect from 'collect.js'
 import { getPokemons } from '~/services/pokemon'
 
 export default {
-    name: 'Menu 1',
-
     mounted() {
         this.loadData()
     },
